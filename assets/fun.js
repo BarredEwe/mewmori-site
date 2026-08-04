@@ -56,6 +56,18 @@
     });
   }
 
+  // --- кот, гуляющий по первому экрану ---
+  var hero = document.querySelector('.hero');
+  if (hero && cat && !reduced) {
+    var walker = document.createElement('img');
+    walker.className = 'walker';
+    walker.alt = '';
+    walker.setAttribute('aria-hidden', 'true');
+    // Путь берём от героя, чтобы не гадать про базовый адрес сайта
+    walker.src = cat.getAttribute('src').replace(/[^/]+\.png$/, 'white_cat.png');
+    hero.appendChild(walker);
+  }
+
   // --- появление блоков при прокрутке ---
   if (!reduced && 'IntersectionObserver' in window) {
     var blocks = document.querySelectorAll('.card, .reaction, .split > div, .faq details');

@@ -11,12 +11,12 @@ cd "$(dirname "$0")"
 # shellcheck disable=SC1091
 source ./requisites.env
 
-for key in FULL_NAME SELLER_SHORT INN ADDRESS EMAIL PHONE DATE; do
+for key in FULL_NAME SELLER_SHORT INN ADDRESS EMAIL DATE; do
   [ -n "${!key:-}" ] || { echo "Не заполнено: $key"; exit 1; }
 done
 
 for file in *.html; do
-  for key in FULL_NAME SELLER_SHORT INN ADDRESS EMAIL PHONE DATE; do
+  for key in FULL_NAME SELLER_SHORT INN ADDRESS EMAIL DATE; do
     value="${!key}"
     # | не встречается в реквизитах, поэтому годится как разделитель sed
     sed -i '' "s|{{$key}}|${value//|/\\|}|g" "$file"
