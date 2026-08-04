@@ -48,8 +48,8 @@
 
       if (!reduced) {
         cat.animate(
-          [{ transform: 'translateY(0)' }, { transform: 'translateY(-10px)' }, { transform: 'translateY(0)' }],
-          { duration: 260, easing: 'steps(3, end)' }
+          [{ transform: 'translateY(0)' }, { transform: 'translateY(-22px)', offset: .35 }, { transform: 'translateY(0)' }],
+          { duration: 620, easing: 'cubic-bezier(.34, 1.4, .64, 1)' }
         );
       }
       unlock();

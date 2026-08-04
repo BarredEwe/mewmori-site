@@ -259,45 +259,44 @@ footer.site p { margin: 6px 0; }
 /* ---------- маленькие радости ----------
    Всё, что двигается, отключается при prefers-reduced-motion. */
 
-/* Коты не стоят на месте. Кадры дискретные (steps), чтобы движение читалось
-   как спрайтовая анимация, а не как плавный CSS-перелив. */
+/* Коты не стоят на месте. Движение плавное, на transform — его считает
+   композитор, поэтому анимация не дёргается даже на слабых машинах. */
 @keyframes idle-bob {
   0%   { transform: translateY(0); }
-  18%  { transform: translateY(-6px); }
-  36%  { transform: translateY(-12px); }
-  54%  { transform: translateY(-12px); }
-  72%  { transform: translateY(-5px); }
+  50%  { transform: translateY(-12px); }
   100% { transform: translateY(0); }
 }
 
-.cat-hero { animation: idle-bob 1.5s steps(1, end) infinite; }
-.split .art img { animation: idle-bob 1.7s steps(1, end) infinite; }
-.band .split .art img { animation-delay: .55s; }
+/* Мягкая синусоида: наверху и внизу кот чуть задерживается, как при дыхании */
+.cat-hero, .split .art img, .cat-strip img {
+  animation-name: idle-bob;
+  animation-duration: 2.4s;
+  animation-timing-function: cubic-bezier(.45, 0, .55, 1);
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.split .art img { animation-duration: 2.8s; }
+.band .split .art img { animation-delay: .9s; }
 
 /* Ряд котов идёт волной, каждый со своей задержкой */
-.cat-strip img {
-  cursor: pointer;
-  animation: idle-bob 1.5s steps(1, end) infinite;
-}
+.cat-strip img { cursor: pointer; }
 .cat-strip img:nth-child(1)  { animation-delay: 0s; }
-.cat-strip img:nth-child(2)  { animation-delay: .12s; }
-.cat-strip img:nth-child(3)  { animation-delay: .24s; }
-.cat-strip img:nth-child(4)  { animation-delay: .36s; }
-.cat-strip img:nth-child(5)  { animation-delay: .48s; }
-.cat-strip img:nth-child(6)  { animation-delay: .6s; }
-.cat-strip img:nth-child(7)  { animation-delay: .72s; }
-.cat-strip img:nth-child(8)  { animation-delay: .84s; }
-.cat-strip img:nth-child(9)  { animation-delay: .96s; }
-.cat-strip img:nth-child(10) { animation-delay: 1.08s; }
-.cat-strip img:nth-child(11) { animation-delay: 1.2s; }
+.cat-strip img:nth-child(2)  { animation-delay: .16s; }
+.cat-strip img:nth-child(3)  { animation-delay: .32s; }
+.cat-strip img:nth-child(4)  { animation-delay: .48s; }
+.cat-strip img:nth-child(5)  { animation-delay: .64s; }
+.cat-strip img:nth-child(6)  { animation-delay: .8s; }
+.cat-strip img:nth-child(7)  { animation-delay: .96s; }
+.cat-strip img:nth-child(8)  { animation-delay: 1.12s; }
+.cat-strip img:nth-child(9)  { animation-delay: 1.28s; }
+.cat-strip img:nth-child(10) { animation-delay: 1.44s; }
+.cat-strip img:nth-child(11) { animation-delay: 1.6s; }
 
-/* Наводишь — кот подпрыгивает выше обычного */
-.cat-strip img:hover { animation: hop .42s steps(1, end) 1; }
+/* Наводишь — кот подпрыгивает выше обычного и мягко приземляется */
+.cat-strip img:hover { animation: hop .6s cubic-bezier(.34, 1.4, .64, 1) 1; }
 @keyframes hop {
   0%   { transform: translateY(0); }
-  25%  { transform: translateY(-18px); }
-  55%  { transform: translateY(-22px); }
-  80%  { transform: translateY(-6px); }
+  35%  { transform: translateY(-24px); }
   100% { transform: translateY(0); }
 }
 
@@ -306,7 +305,8 @@ footer.site p { margin: 6px 0; }
 .walker {
   position: absolute; bottom: 0; left: -70px;
   width: 58px; image-rendering: pixelated; pointer-events: none;
-  animation: walk 26s steps(52, end) infinite;
+  animation: walk 26s linear infinite;
+  will-change: left;
 }
 @keyframes walk {
   0%   { left: -70px; transform: scaleX(1); }
