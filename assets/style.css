@@ -1,0 +1,179 @@
+/* Mewmori — Persona Noir. Те же цвета, что в приложении
+   (Mewmori/Sources/Common/Views/PersonaNoirDesign.swift). */
+
+:root {
+  --bg: #f5f5ed;
+  --surface: #ffffff;
+  --surface-strong: #e6e6de;
+  --ink: #1c1f29;
+  --muted-border: #9ea1ab;
+  --text: #1c1f29;
+  --text-2: #474a54;
+  --text-3: #737580;
+  --inverted: #fafaf2;
+  --accent: #8c6beb;
+  --success: #59d6c7;
+  --warning: #ff9633;
+  --danger: #ff575e;
+  --radius: 14px;
+  --shadow: 4px 4px 0 var(--ink);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161d;
+    --surface: #1c1f29;
+    --surface-strong: #262a36;
+    --ink: #fafaf2;
+    --muted-border: #4a4d58;
+    --text: #fafaf2;
+    --text-2: #c8cad2;
+    --text-3: #9ea1ab;
+    --inverted: #14161d;
+    --shadow: 4px 4px 0 #000;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.narrow { max-width: 720px; }
+
+a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+
+/* ---------- шапка ---------- */
+
+header.site {
+  border-bottom: 3px solid var(--ink);
+  background: var(--surface);
+}
+header.site .wrap {
+  display: flex; align-items: center; gap: 16px;
+  padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 19px; letter-spacing: -0.02em; text-decoration: none;
+}
+.brand img { width: 32px; height: 32px; border-radius: 8px; }
+nav.site { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+nav.site a { text-decoration: none; color: var(--text-2); }
+nav.site a:hover { color: var(--accent); }
+
+/* ---------- герой ---------- */
+
+.hero { padding: 64px 0 48px; text-align: center; }
+.hero h1 {
+  font-size: clamp(36px, 7vw, 62px); line-height: 1.05; letter-spacing: -0.03em;
+  margin: 0 0 18px; font-weight: 850;
+}
+.hero p.lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--text-2); max-width: 620px; margin: 0 auto 28px; }
+
+.cat-hero {
+  width: 180px; height: 180px; image-rendering: pixelated;
+  margin: 0 auto 12px; display: block;
+}
+
+/* ---------- кнопки ---------- */
+
+.button {
+  display: inline-block; padding: 13px 26px; border: 3px solid var(--ink);
+  border-radius: var(--radius); background: var(--accent); color: #fff;
+  font-weight: 700; font-size: 16px; text-decoration: none;
+  box-shadow: var(--shadow); transition: transform .08s ease, box-shadow .08s ease;
+}
+.button:hover { color: #fff; transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.button.secondary { background: var(--surface); color: var(--text); }
+.button.secondary:hover { color: var(--text); }
+.buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.note { font-size: 14px; color: var(--text-3); margin-top: 14px; }
+
+/* ---------- секции и карточки ---------- */
+
+section { padding: 44px 0; }
+section h2 {
+  font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 800;
+}
+section .sub { color: var(--text-2); margin: 0 0 28px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.card {
+  background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 20px;
+}
+.card h3 { margin: 0 0 8px; font-size: 18px; }
+.card p { margin: 0; color: var(--text-2); font-size: 15px; }
+
+/* ---------- витрина ---------- */
+
+.grid-skins { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.skin {
+  background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px; text-align: center;
+}
+.skin img { width: 100%; max-width: 120px; image-rendering: pixelated; display: block; margin: 0 auto 8px; }
+.skin .name { font-weight: 700; font-size: 15px; }
+.skin .price { font-size: 15px; color: var(--text-2); margin-top: 2px; }
+.skin .free { color: var(--accent); font-weight: 700; }
+
+table.price {
+  width: 100%; border-collapse: collapse; background: var(--surface);
+  border: 3px solid var(--ink); border-radius: var(--radius); overflow: hidden;
+}
+table.price th, table.price td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--muted-border); font-size: 15px; }
+table.price th { background: var(--surface-strong); font-weight: 700; }
+table.price td:last-child, table.price th:last-child { text-align: right; white-space: nowrap; }
+table.price tr:last-child td { border-bottom: 0; }
+.table-scroll { overflow-x: auto; }
+
+/* ---------- правовые страницы ---------- */
+
+.legal { padding: 40px 0 64px; }
+.legal h1 { font-size: clamp(28px, 4.5vw, 38px); letter-spacing: -0.02em; margin: 0 0 6px; }
+.legal .updated { color: var(--text-3); font-size: 14px; margin: 0 0 32px; }
+.legal h2 { font-size: 20px; margin: 34px 0 10px; }
+.legal h3 { font-size: 17px; margin: 24px 0 8px; }
+.legal p, .legal li { color: var(--text-2); }
+.legal ul, .legal ol { padding-left: 22px; }
+.legal li { margin-bottom: 6px; }
+
+.box {
+  background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 20px 22px; margin: 24px 0;
+}
+.box p:first-child { margin-top: 0; }
+.box p:last-child { margin-bottom: 0; }
+.box dl { margin: 0; display: grid; grid-template-columns: minmax(140px, auto) 1fr; gap: 8px 18px; }
+.box dt { color: var(--text-3); font-size: 15px; }
+.box dd { margin: 0; font-weight: 600; font-size: 15px; }
+
+/* ---------- подвал ---------- */
+
+footer.site {
+  border-top: 3px solid var(--ink); background: var(--surface);
+  padding: 30px 0 40px; font-size: 14px; color: var(--text-3);
+}
+footer.site nav { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+footer.site nav a { color: var(--text-2); text-decoration: none; }
+footer.site nav a:hover { color: var(--accent); }
+footer.site p { margin: 6px 0; }
+.pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 14px 0; }
+.pay-methods span {
+  border: 2px solid var(--muted-border); border-radius: 8px; padding: 4px 10px;
+  font-size: 13px; color: var(--text-2);
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 44px 0 32px; }
+  nav.site { width: 100%; margin-left: 0; gap: 14px; }
+}

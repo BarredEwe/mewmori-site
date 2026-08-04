@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты и реквизиты — Mewmori</title>
+<meta name="description" content="Контакты службы поддержки Mewmori и реквизиты продавца.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="assets/icon.png" alt=""> Mewmori</a>
+    <nav class="site">
+      <a href="/#skins">Скины</a>
+      <a href="/#prices">Цены</a>
+      <a href="payment.html">Оплата</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap narrow legal">
+  <h1>Контакты и реквизиты</h1>
+  <p class="updated">Обновлено {{DATE}}</p>
+
+  <h2>Поддержка</h2>
+  <p>Пиши по любому вопросу — о покупке, ключе, возврате или баге в приложении.
+  Отвечаем в течение одного рабочего дня.</p>
+  <div class="box">
+    <dl>
+      <dt>Электронная почта</dt><dd><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd>
+      <dt>Телефон</dt><dd>{{PHONE}}</dd>
+      <dt>Telegram</dt><dd><a href="https://t.me/mewmori_shop_bot">@mewmori_shop_bot</a></dd>
+      <dt>Время работы</dt><dd>пн–пт, 10:00–19:00 (МСК)</dd>
+    </dl>
+  </div>
+
+  <h2>Быстрые ответы</h2>
+  <ul>
+    <li><strong>Потерял лицензионный ключ.</strong>
+    <a href="https://mewmori-checkout.mewmori.workers.dev/restore">Восстановить по email</a> —
+    придёт ключ со всеми покупками сразу.</li>
+    <li><strong>Оплата прошла, ключ не пришёл.</strong> Проверь папку «Спам», затем напиши
+    нам — выдадим вручную.</li>
+    <li><strong>Хочу вернуть деньги.</strong> Условия и порядок —
+    на странице <a href="refund.html">«Возврат»</a>.</li>
+  </ul>
+
+  <h2>Реквизиты продавца</h2>
+  <div class="box">
+    <dl>
+      <dt>Продавец</dt><dd>{{FULL_NAME}}</dd>
+      <dt>Статус</dt><dd>Плательщик налога на профессиональный доход (самозанятый)</dd>
+      <dt>ИНН</dt><dd>{{INN}}</dd>
+      <dt>Адрес</dt><dd>{{ADDRESS}}</dd>
+      <dt>Электронная почта</dt><dd><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd>
+      <dt>Телефон</dt><dd>{{PHONE}}</dd>
+      <dt>Сайт</dt><dd>https://mewmori.com</dd>
+    </dl>
+  </div>
+
+  <p>Документы: <a href="offer.html">публичная оферта</a>,
+  <a href="privacy.html">политика конфиденциальности</a>,
+  <a href="payment.html">оплата и получение товара</a>,
+  <a href="refund.html">возврат</a>.</p>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav>
+      <a href="offer.html">Публичная оферта</a>
+      <a href="payment.html">Оплата и получение</a>
+      <a href="refund.html">Возврат</a>
+      <a href="privacy.html">Конфиденциальность</a>
+      <a href="contacts.html">Контакты и реквизиты</a>
+    </nav>
+    <div class="pay-methods">
+      <span>Visa</span><span>Mastercard</span><span>МИР</span><span>СБП</span><span>Robokassa</span>
+    </div>
+    <p>{{SELLER_SHORT}}, ИНН {{INN}}. Плательщик налога на профессиональный доход.</p>
+    <p>{{EMAIL}} · {{PHONE}}</p>
+    <p>© 2026 Mewmori</p>
+  </div>
+</footer>
+
+</body>
+</html>
