@@ -187,7 +187,7 @@ footer.site p { margin: 6px 0; }
 .split h2 { margin-bottom: 14px; }
 .split p { color: var(--text-2); margin: 0 0 14px; }
 
-.reactions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.reactions { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
 .reaction {
   background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius);
   box-shadow: var(--shadow); padding: 16px 18px;
