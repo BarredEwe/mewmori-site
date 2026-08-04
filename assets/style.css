@@ -102,7 +102,8 @@ nav.site a:hover { color: var(--accent); }
 
 section { padding: 44px 0; }
 section h2 {
-  font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 800;
+  font-size: clamp(26px, 4vw, 34px); line-height: 1.15; letter-spacing: -0.02em;
+  margin: 0 0 8px; font-weight: 800;
 }
 section .sub { color: var(--text-2); margin: 0 0 28px; }
 
@@ -171,6 +172,52 @@ footer.site p { margin: 6px 0; }
 .pay-methods span {
   border: 2px solid var(--muted-border); border-radius: 8px; padding: 4px 10px;
   font-size: 13px; color: var(--text-2);
+}
+
+/* ---------- лендинг ---------- */
+
+.band { background: var(--surface); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.split .art {
+  background: var(--bg); border: 3px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 28px; text-align: center;
+}
+.split .art img { width: 150px; image-rendering: pixelated; }
+.split h2 { margin-bottom: 14px; }
+.split p { color: var(--text-2); margin: 0 0 14px; }
+
+.reactions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.reaction {
+  background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px 18px;
+}
+.reaction .when { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.reaction .then { color: var(--text-2); font-size: 15px; }
+
+.cat-strip {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+  margin: 0 0 22px;
+}
+.cat-strip img { width: 76px; image-rendering: pixelated; }
+
+.faq { max-width: 720px; margin: 0 auto; }
+.faq details {
+  background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px 18px; margin-bottom: 14px;
+}
+.faq summary { font-weight: 700; cursor: pointer; list-style: none; font-size: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--text-3); font-weight: 700; }
+.faq details[open] summary::after { content: "–"; }
+.faq p { color: var(--text-2); margin: 12px 0 0; font-size: 15px; }
+
+.cta { text-align: center; padding: 60px 0; }
+.cta h2 { margin-bottom: 10px; }
+.cta p { color: var(--text-2); max-width: 520px; margin: 0 auto 24px; }
+
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 640px) {
