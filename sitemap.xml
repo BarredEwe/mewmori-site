@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mewmori.com/</loc><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://mewmori.com/</loc><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/"/></url>
   <url><loc>https://mewmori.com/prices.html</loc><priority>0.8</priority></url>
   <url><loc>https://mewmori.com/payment.html</loc><priority>0.6</priority></url>
   <url><loc>https://mewmori.com/refund.html</loc><priority>0.5</priority></url>
   <url><loc>https://mewmori.com/offer.html</loc><priority>0.5</priority></url>
   <url><loc>https://mewmori.com/privacy.html</loc><priority>0.5</priority></url>
   <url><loc>https://mewmori.com/contacts.html</loc><priority>0.6</priority></url>
+  <url><loc>https://mewmori.com/en/</loc><priority>1.0</priority></url>
+  <url><loc>https://mewmori.com/en/prices.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mewmori.com/en/payment.html</loc><priority>0.6</priority></url>
+  <url><loc>https://mewmori.com/en/refund.html</loc><priority>0.5</priority></url>
+  <url><loc>https://mewmori.com/en/offer.html</loc><priority>0.5</priority></url>
+  <url><loc>https://mewmori.com/en/privacy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://mewmori.com/en/contacts.html</loc><priority>0.6</priority></url>
 </urlset>
