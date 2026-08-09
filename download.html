@@ -8,10 +8,24 @@
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<main>
-  <h1>Скачиваю Mewmori…</h1>
-  <p id="download-status">Нахожу последнюю версию.</p>
+<body class="download-page">
+<main class="download-wrap">
+  <section class="panel download-panel" aria-labelledby="download-title">
+    <div class="download-cat-scene" aria-hidden="true">
+      <div class="download-glow"></div>
+      <img class="download-cat" src="assets/cats/classic_cat.png" alt="">
+      <span class="download-spark download-spark-one">✦</span>
+      <span class="download-spark download-spark-two">✦</span>
+      <span class="download-spark download-spark-three">·</span>
+    </div>
+    <div class="download-copy">
+      <p class="download-kicker">Mewmori уже идёт к тебе</p>
+      <h1 id="download-title">Собираю твоего кота</h1>
+      <p id="download-status" class="download-status" role="status" aria-live="polite">Нахожу последнюю версию.</p>
+      <div class="download-progress" aria-hidden="true"><span></span></div>
+      <p class="download-note">Загрузка начнётся автоматически.</p>
+    </div>
+  </section>
 </main>
 <script type="module" src="assets/latest-release-download.js"></script>
 </body>

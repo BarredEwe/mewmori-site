@@ -256,6 +256,113 @@ footer.site p { margin: 6px 0; }
 .pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
 .pay-methods span { --fill: var(--surface); padding: 5px 12px; font-size: 17px; color: var(--text-2); }
 
+/* ---------- загрузка приложения ---------- */
+
+.download-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 30rem),
+    radial-gradient(circle at 80% 78%, color-mix(in srgb, var(--success) 16%, transparent), transparent 27rem),
+    var(--bg);
+}
+
+.download-wrap { width: min(100%, 690px); }
+
+.download-panel {
+  --fill: var(--surface);
+  display: grid;
+  grid-template-columns: minmax(190px, .8fr) 1.2fr;
+  gap: clamp(24px, 5vw, 52px);
+  align-items: center;
+  padding: clamp(28px, 6vw, 54px);
+}
+
+.download-cat-scene {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 210px;
+}
+
+.download-glow {
+  position: absolute;
+  width: 172px;
+  aspect-ratio: 1;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  clip-path: var(--shape);
+  transform: rotate(45deg);
+}
+
+.download-cat {
+  position: relative;
+  width: min(100%, 174px);
+  image-rendering: pixelated;
+  animation: download-cat-bob 1.9s cubic-bezier(.45, 0, .55, 1) infinite;
+}
+
+.download-spark {
+  position: absolute;
+  color: var(--accent);
+  font-size: 28px;
+  font-weight: 700;
+  animation: download-spark 1.6s ease-in-out infinite;
+}
+.download-spark-one { top: 11%; right: 13%; }
+.download-spark-two { bottom: 13%; left: 10%; color: var(--success); animation-delay: .45s; }
+.download-spark-three { top: 18%; left: 14%; color: var(--warning); font-size: 42px; animation-delay: .9s; }
+
+.download-copy { min-width: 0; }
+.download-kicker {
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-size: 19px;
+  font-weight: 700;
+}
+.download-copy h1 {
+  margin: 0 0 12px;
+  font-size: clamp(38px, 7vw, 58px);
+  line-height: .96;
+  letter-spacing: .01em;
+}
+.download-status { min-height: 1.5em; margin: 0; color: var(--text-2); font-size: 23px; }
+.download-note { margin: 12px 0 0; color: var(--text-3); font-size: 18px; }
+
+.download-progress {
+  position: relative;
+  height: 10px;
+  margin-top: 22px;
+  overflow: hidden;
+  background: var(--surface-strong);
+  clip-path: var(--shape);
+}
+.download-progress span {
+  position: absolute;
+  inset: 0 auto 0 -45%;
+  width: 45%;
+  background: var(--accent);
+  animation: download-progress 1.15s ease-in-out infinite;
+}
+
+.download-panel[data-state="error"] .download-progress span { background: var(--danger); animation-play-state: paused; left: 0; width: 100%; }
+.download-panel[data-state="error"] .download-kicker { color: var(--danger); }
+
+@keyframes download-cat-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes download-spark {
+  0%, 100% { transform: scale(.75) rotate(0); opacity: .35; }
+  50% { transform: scale(1.15) rotate(18deg); opacity: 1; }
+}
+@keyframes download-progress {
+  from { transform: translateX(0); }
+  to { transform: translateX(325%); }
+}
+
 /* ---------- маленькие радости ----------
    Всё, что двигается, отключается при prefers-reduced-motion. */
 
@@ -350,6 +457,8 @@ footer.site p { margin: 6px 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .cat-hero, .split .art img, .cat-strip img, .cat-strip img:hover, .walker { animation: none; }
+  .download-cat, .download-spark, .download-progress span { animation: none; }
+  .download-progress span { left: 0; width: 100%; }
   .walker { display: none; }
   .reveal, .reveal.shown, .cat-say, .achievement { opacity: 1; transform: none; transition: none; }
 }
@@ -365,4 +474,8 @@ footer.site p { margin: 6px 0; }
   nav.site a, footer.site nav a { display: inline-block; padding: 6px 2px; }
   .lang { font-size: 19px; }
   .lang a { display: inline-block; padding: 6px 8px; }
+  .download-page { padding: 16px; }
+  .download-panel { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .download-cat-scene { min-height: 160px; }
+  .download-cat { width: 132px; }
 }
