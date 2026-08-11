@@ -1,0 +1,74 @@
+MEWMORI PRESS KIT
+
+Mewmori 1.0.10
+https://mewmori.com
+
+============================================================
+ONE SENTENCE
+============================================================
+
+Mewmori is a pixel cat that lives on your Mac desktop, gets to know you and remembers your conversations — the language model runs on the machine itself, so nothing goes to the cloud.
+
+============================================================
+50 WORDS
+============================================================
+
+Mewmori is a desktop pet for macOS that behaves like a cat and remembers like a friend. It asks your name, takes the one you give it, notices what you are working on, and brings it up a week later. A 1.3 GB model runs locally: nothing leaves your Mac.
+
+============================================================
+150 WORDS
+============================================================
+
+Mewmori is a pixel cat that lives on your Mac desktop and gets to know you. A five-act introduction has it ask your name, receive one from you, and ask what you do — and from then on it remembers. Not a chat history, but facts: what you work on, what you like, what kept you busy.
+
+It all runs on Qwen 3.5 (2B), a language model that works on the computer itself. The model weighs 1.3 GB and downloads only when you first want to talk; decline, and the cat still lives. No replies, screen contents or memories are ever sent anywhere — Mewmori has no server and no sign-up.
+
+The cat also lives its own life: it notices what is on your screen, begs for food, gets the zoomies, plays hide-and-seek and tic-tac-toe, grows herbs and goes on expeditions. The app is free; only skins and accessories are paid.
+
+============================================================
+FACT SHEET
+============================================================
+
+What it is   A macOS desktop pet with a local language model and long-term memory
+Version      1.0.10
+System       macOS 14.6 or newer
+Processor    Universal binary: Apple Silicon and Intel
+Size         22 MB download, about 40 MB on disk
+Model        Qwen 3.5 (2B), 1.3 GB — downloaded separately and only with consent; the cat works without it
+Memory       4 GB RAM or more for conversations
+Privacy      Zero conversation telemetry: replies, screen contents and memories never leave the computer
+Account      None. No sign-up; a purchase lives in a licence key
+Price        The app is free. Only skins and accessories are paid, 99–599 ₽, one-time
+Contents     14 cats, 22 wardrobe items, 5 things to do: hide-and-seek, chase, clicker, tic-tac-toe, a garden with expeditions
+Languages    Russian and English, following the system language
+Updates      Sparkle, in-app
+Developer    Maxim Grishutin, a one-person project
+
+============================================================
+QUOTES FROM THE DEVELOPER
+============================================================
+
+“I didn't need another chatbot in a window. I wanted a creature that simply lives nearby and one day recalls something you said last week.”
+    — Maxim Grishutin, on why it had to be a cat
+
+“The local model isn't a privacy checkbox here. The cat sees your screen — if that went to a server, I wouldn't install it myself.”
+    — Maxim Grishutin, on why the model runs locally
+
+============================================================
+WHAT YOU MAY DO
+============================================================
+
+The logo, icon, screenshots and GIFs may be used freely in coverage of Mewmori — articles, reviews, videos and roundups. No permission needed. One request: don't redraw the logo and don't pass the materials off as something else.
+
+============================================================
+CONTACT
+============================================================
+
+Email me — I answer personally and quickly. If you need a pre-release build, access to the paid skins for a review, or an answer that isn't on this page, just ask.
+
+Email: support@mewmori.com
+Site: https://mewmori.com
+Download: https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip
+This page: https://mewmori.com/press.html
+
+The name reads two ways: mew + memory — a cat that remembers you — and memento mori. The second reading is deliberate.

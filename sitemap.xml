@@ -4,6 +4,10 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/"/></url>
+  <url><loc>https://mewmori.com/press.html</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mewmori.com/press.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mewmori.com/en/press.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mewmori.com/press.html"/></url>
   <url><loc>https://mewmori.com/prices.html</loc><priority>0.8</priority></url>
   <url><loc>https://mewmori.com/payment.html</loc><priority>0.6</priority></url>
   <url><loc>https://mewmori.com/refund.html</loc><priority>0.5</priority></url>
@@ -11,6 +15,7 @@
   <url><loc>https://mewmori.com/privacy.html</loc><priority>0.5</priority></url>
   <url><loc>https://mewmori.com/contacts.html</loc><priority>0.6</priority></url>
   <url><loc>https://mewmori.com/en/</loc><priority>1.0</priority></url>
+  <url><loc>https://mewmori.com/en/press.html</loc><priority>0.8</priority></url>
   <url><loc>https://mewmori.com/en/prices.html</loc><priority>0.8</priority></url>
   <url><loc>https://mewmori.com/en/payment.html</loc><priority>0.6</priority></url>
   <url><loc>https://mewmori.com/en/refund.html</loc><priority>0.5</priority></url>
