@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
+<!-- Загрузка начинается без JavaScript и без обращения к GitHub API: у
+     неавторизованного API лимит 60 запросов в час на IP, и в день, когда
+     посетителей много, кнопка отвалилась бы именно у них. Имя архива
+     постоянное — копию под ним выкладывает `make publish`. -->
+<meta http-equiv="refresh" content="1; url=https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">
 <title>Скачивание Mewmori</title>
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/style.css">
@@ -21,12 +26,11 @@
     <div class="download-copy">
       <p class="download-kicker">Mewmori уже идёт к тебе</p>
       <h1 id="download-title">Собираю твоего кота</h1>
-      <p id="download-status" class="download-status" role="status" aria-live="polite">Нахожу последнюю версию.</p>
+      <p id="download-status" class="download-status" role="status">Загрузка вот-вот начнётся сама.</p>
       <div class="download-progress" aria-hidden="true"><span></span></div>
-      <p class="download-note">Загрузка начнётся автоматически.</p>
+      <p class="download-note">Не началась? <a href="https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">Забери кота вручную</a>.</p>
     </div>
   </section>
 </main>
-<script type="module" src="assets/latest-release-download.js"></script>
 </body>
 </html>

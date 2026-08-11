@@ -347,9 +347,6 @@ footer.site p { margin: 6px 0; }
   animation: download-progress 1.15s ease-in-out infinite;
 }
 
-.download-panel[data-state="error"] .download-progress span { background: var(--danger); animation-play-state: paused; left: 0; width: 100%; }
-.download-panel[data-state="error"] .download-kicker { color: var(--danger); }
-
 @keyframes download-cat-bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }

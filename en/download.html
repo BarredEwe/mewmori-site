@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<!-- The download starts without JavaScript and without touching the GitHub
+     API: unauthenticated API calls are capped at 60 per hour per IP, so the
+     button would fail exactly on a busy day. The archive name is fixed —
+     `make publish` uploads a copy under it. -->
+<meta http-equiv="refresh" content="1; url=https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">
+<title>Downloading Mewmori</title>
+<link rel="icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="download-page">
+<main class="download-wrap">
+  <section class="panel download-panel" aria-labelledby="download-title">
+    <div class="download-cat-scene" aria-hidden="true">
+      <div class="download-glow"></div>
+      <img class="download-cat" src="../assets/cats/classic_cat.png" alt="">
+      <span class="download-spark download-spark-one">✦</span>
+      <span class="download-spark download-spark-two">✦</span>
+      <span class="download-spark download-spark-three">·</span>
+    </div>
+    <div class="download-copy">
+      <p class="download-kicker">Mewmori is on its way</p>
+      <h1 id="download-title">Fetching your cat</h1>
+      <p id="download-status" class="download-status" role="status">The download is about to start on its own.</p>
+      <div class="download-progress" aria-hidden="true"><span></span></div>
+      <p class="download-note">Nothing happening? <a href="https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">Grab the cat manually</a>.</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>
