@@ -7,8 +7,30 @@
 <!-- The download starts without JavaScript and without touching the GitHub
      API: unauthenticated API calls are capped at 60 per hour per IP, so the
      button would fail exactly on a busy day. The archive name is fixed —
-     `make publish` uploads a copy under it. -->
-<meta http-equiv="refresh" content="1; url=https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">
+     `make publish` uploads a copy under it.
+
+     It goes through `/go` in the Worker, which records the channel and the date
+     and hands back a 302 to that same archive. That is how downloads are counted
+     per channel: the app cannot do it, because no `mewmori://` link is ever
+     opened along this path (docs/GO_TO_MARKET.md §5.1 in the main repository). -->
+<meta http-equiv="refresh" content="1; url=https://mewmori-checkout.mewmori.workers.dev/go">
+<!-- The channel tag from the page address is appended to that same target. The
+     script edits the redirect rather than performing one of its own: two
+     navigations mean two downloads for a visitor. A browser that ignores the
+     edit downloads exactly the same file and is counted as organic — the tag is
+     lost, the download is not. -->
+<script>
+(function () {
+  var src = new URLSearchParams(window.location.search).get('src');
+  if (!src || !/^[a-z][a-z0-9-]{0,31}$/.test(src)) return;
+
+  var meta = document.querySelector('meta[http-equiv="refresh"]');
+  meta.setAttribute(
+    'content',
+    '1; url=https://mewmori-checkout.mewmori.workers.dev/go?src=' + encodeURIComponent(src)
+  );
+})();
+</script>
 <title>Downloading Mewmori</title>
 <link rel="icon" href="../assets/icon.png">
 <link rel="stylesheet" href="../assets/style.css">
@@ -28,6 +50,11 @@
       <h1 id="download-title">Fetching your cat</h1>
       <p id="download-status" class="download-status" role="status">The download is about to start on its own.</p>
       <div class="download-progress" aria-hidden="true"><span></span></div>
+      <!-- The fallback goes straight to GitHub, past the counter: this link is
+           clicked precisely when the automatic download did not work, and
+           sending the visitor through the Worker a second time repeats the
+           thing that just failed. These downloads are not counted, and should
+           not be. -->
       <p class="download-note">Nothing happening? <a href="https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">Grab the cat manually</a>.</p>
     </div>
   </section>

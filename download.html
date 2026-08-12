@@ -7,8 +7,29 @@
 <!-- Загрузка начинается без JavaScript и без обращения к GitHub API: у
      неавторизованного API лимит 60 запросов в час на IP, и в день, когда
      посетителей много, кнопка отвалилась бы именно у них. Имя архива
-     постоянное — копию под ним выкладывает `make publish`. -->
-<meta http-equiv="refresh" content="1; url=https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">
+     постоянное — копию под ним выкладывает `make publish`.
+
+     Идёт она через `/go` в воркере: он записывает канал и дату и отдаёт 302 на
+     тот же самый архив. Так скачивания считаются по каналам — приложение этого
+     не умеет, потому что `mewmori://` на этом пути не открывается никогда
+     (docs/GO_TO_MARKET.md §5.1 в основном репозитории). -->
+<meta http-equiv="refresh" content="1; url=https://mewmori-checkout.mewmori.workers.dev/go">
+<!-- Метка канала из адреса страницы дописывается сюда же. Скрипт правит цель
+     перехода, а не делает свой: два перехода — это две загрузки у человека.
+     Браузер, который правку проигнорирует, скачает всё то же самое и попадёт в
+     счёт как органика — теряется метка, но не скачивание. -->
+<script>
+(function () {
+  var src = new URLSearchParams(window.location.search).get('src');
+  if (!src || !/^[a-z][a-z0-9-]{0,31}$/.test(src)) return;
+
+  var meta = document.querySelector('meta[http-equiv="refresh"]');
+  meta.setAttribute(
+    'content',
+    '1; url=https://mewmori-checkout.mewmori.workers.dev/go?src=' + encodeURIComponent(src)
+  );
+})();
+</script>
 <title>Скачивание Mewmori</title>
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/style.css">
@@ -28,6 +49,10 @@
       <h1 id="download-title">Собираю твоего кота</h1>
       <p id="download-status" class="download-status" role="status">Загрузка вот-вот начнётся сама.</p>
       <div class="download-progress" aria-hidden="true"><span></span></div>
+      <!-- Запасной путь ведёт прямо на GitHub, мимо счётчика: сюда человек
+           жмёт как раз тогда, когда автоматическая загрузка не сработала, и
+           отправлять его второй раз через воркер значит повторить то, что уже
+           не получилось. Эти скачивания не считаются — и не должны. -->
       <p class="download-note">Не началась? <a href="https://github.com/Mewmori-App/Mewmori-Updates/releases/latest/download/Mewmori.zip">Забери кота вручную</a>.</p>
     </div>
   </section>
