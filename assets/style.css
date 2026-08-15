@@ -261,15 +261,15 @@ table.price tr:last-child td { border-bottom: 0; }
 
 footer.site {
   border-top: 3px solid var(--ink); background: var(--surface);
-  padding: 30px 0 40px; font-size: 18px; color: var(--text-3);
+  padding: 24px 0 28px; font-size: 18px; color: var(--text-3);
 }
-footer.site nav { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+footer.site nav { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
 footer.site nav a { color: var(--text-2); text-decoration: none; }
 footer.site nav a:hover { color: var(--accent); }
 footer.site p { margin: 6px 0; }
-.pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
 .pay-methods span { --fill: var(--surface); padding: 5px 12px; font-size: 17px; color: var(--text-2); }
-.social-footer { margin: 22px 0; }
+footer.site .social-footer { margin: 12px 0; padding-block: 0; }
 .social-footer-title { color: var(--text-2); font-weight: 700; }
 .social-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 .social-link {
