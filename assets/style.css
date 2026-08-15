@@ -243,6 +243,11 @@ table.price tr:last-child td { border-bottom: 0; }
 .cta h2 { margin-bottom: 10px; }
 .cta p { color: var(--text-2); max-width: 560px; margin: 0 auto 24px; }
 
+.social-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 /* ---------- подвал ---------- */
 
 footer.site {
@@ -255,6 +260,19 @@ footer.site nav a:hover { color: var(--accent); }
 footer.site p { margin: 6px 0; }
 .pay-methods { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
 .pay-methods span { --fill: var(--surface); padding: 5px 12px; font-size: 17px; color: var(--text-2); }
+.social-footer { margin: 22px 0; }
+.social-footer-title { color: var(--text-2); font-weight: 700; }
+.social-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.social-link {
+  display: inline-block;
+  padding: 5px 10px;
+  color: var(--text-2);
+  text-decoration: none;
+  background: var(--surface-strong);
+  border: 2px solid var(--ink);
+  clip-path: var(--shape);
+}
+.social-link:hover { color: var(--accent); }
 
 /* ---------- загрузка приложения ---------- */
 

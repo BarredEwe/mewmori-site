@@ -246,12 +246,13 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
   <table class="facts">
     <tbody>
         <tr><td>What it is</td><td>A macOS desktop pet with a local language model and long-term memory</td></tr>
-        <tr><td>Version</td><td>1.0.11</td></tr>
+        <tr><td>Version</td><td>1.0.12</td></tr>
         <tr><td>System</td><td>macOS 14.6 or newer</td></tr>
         <tr><td>Processor</td><td>Universal binary: Apple Silicon and Intel</td></tr>
         <tr><td>Size</td><td>22 MB download, about 40 MB on disk</td></tr>
         <tr><td>Model</td><td>Qwen 3.5 (2B), 1.4 GB — downloaded separately and only with consent; the cat works without it</td></tr>
         <tr><td>Memory</td><td>4 GB RAM or more for conversations</td></tr>
+        <tr><td>Memory in use</td><td>About 400 MB with the model loaded — preliminary measurement on a MacBook Pro M3 Max</td></tr>
         <tr><td>Privacy</td><td>Zero conversation telemetry: replies, screen contents and memories never leave the computer</td></tr>
         <tr><td>Account</td><td>None. No sign-up; a purchase lives in a licence key</td></tr>
         <tr><td>Price</td><td>The app is free. Only skins and accessories are paid, 99–599 ₽, one-time</td></tr>
@@ -292,10 +293,16 @@ table.facts td:first-child { font-weight: 700; white-space: nowrap; width: 1%; p
 <footer class="site">
   <div class="wrap">
     <nav>
-      <a href="prices.html">Pricing</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="contacts.html">Contacts</a>
+      <a href="../prices.html">Pricing</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../contacts.html">Contacts</a>
     </nav>
+    <section class="social-footer" aria-labelledby="social-footer-title">
+      <p id="social-footer-title" class="social-footer-title">Mewmori online</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.youtube.com/channel/UCOPSPxoBH47BL3bi24bNYUg" target="_blank" rel="noopener noreferrer">YouTube</a><a class="social-link" href="https://www.tiktok.com/@mewmori.app" target="_blank" rel="noopener noreferrer">TikTok</a><a class="social-link" href="https://www.instagram.com/mewmori.app/" target="_blank" rel="noopener noreferrer">Instagram</a><a class="social-link" href="https://x.com/mewmori_app" target="_blank" rel="noopener noreferrer">X</a><a class="social-link" href="https://www.reddit.com/user/mewmori-app/" target="_blank" rel="noopener noreferrer">Reddit</a><a class="social-link" href="https://mewmori.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a><a class="social-link" href="https://discord.gg/FHwmPgEfx" target="_blank" rel="noopener noreferrer">Discord</a>
+      </div>
+    </section>
     <p>support@mewmori.com</p>
     <p>© 2026 Mewmori</p>
   </div>
@@ -319,6 +326,5 @@ document.addEventListener('click', function (event) {
 });
 </script>
 
-<script src="../assets/src.js" defer></script>
 </body>
 </html>
