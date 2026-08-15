@@ -109,3 +109,14 @@
     }, 4200);
   }
 })();
+
+// Ролик в герое крутится сам, но не у тех, кто просил систему не двигать картинку:
+// для них он замирает на первом кадре и получает кнопку воспроизведения.
+(() => {
+  const demo = document.querySelector('.hero-demo video');
+  if (!demo || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  demo.removeAttribute('autoplay');
+  demo.removeAttribute('loop');
+  demo.controls = true;
+  demo.pause();
+})();

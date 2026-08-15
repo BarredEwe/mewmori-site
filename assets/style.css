@@ -149,6 +149,15 @@ nav.site a:hover { color: var(--accent); }
 
 .cat-hero { width: 180px; height: 180px; image-rendering: pixelated; margin: 0 auto 12px; display: block; }
 
+/* Рабочий стол в деле: кот замечает хозяина. Без звука и без управления —
+   это иллюстрация, а не проигрыватель. */
+.hero-demo { margin: 36px auto 0; max-width: 900px; }
+.hero-demo video {
+  display: block; width: 100%; height: auto;
+  border: 3px solid var(--ink); filter: var(--drop);
+}
+.hero-demo figcaption { margin-top: 14px; color: var(--text-2); font-size: 17px; }
+
 /* ---------- кнопки ---------- */
 
 .button {
