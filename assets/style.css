@@ -68,7 +68,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+/* Только боковые поля: вертикальный ритм задают секции.
+   Раньше здесь стоял shorthand `padding`, и он обнулял padding-block
+   у секций, которым .wrap навешен прямо на <section>. */
+.wrap { width: 100%; max-width: 960px; margin: 0 auto; padding-inline: 20px; }
 .narrow { max-width: 720px; }
 
 a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
@@ -214,6 +217,15 @@ table.price tr:last-child td { border-bottom: 0; }
 .legal p, .legal li { color: var(--text-2); }
 .legal ul, .legal ol { padding-left: 22px; }
 .legal li { margin-bottom: 6px; }
+
+/* Команды и ключи. Шрифт тот же — Handjet и так моноширинный, менять его
+   значило бы вставить в текст кусок чужой типографики. */
+code {
+  font-family: inherit;
+  background: var(--surface-strong);
+  padding: 1px 6px;
+  white-space: nowrap;
+}
 
 .box { padding: 20px 22px; margin: 24px 0; }
 .box p:first-child { margin-top: 0; }
@@ -422,6 +434,9 @@ footer.site .social-footer { margin: 12px 0; padding-block: 0; }
 .cat-strip img:nth-child(9)  { animation-delay: 1.28s; }
 .cat-strip img:nth-child(10) { animation-delay: 1.44s; }
 .cat-strip img:nth-child(11) { animation-delay: 1.6s; }
+.cat-strip img:nth-child(12) { animation-delay: 1.76s; }
+.cat-strip img:nth-child(13) { animation-delay: 1.92s; }
+.cat-strip img:nth-child(14) { animation-delay: 2.08s; }
 
 /* Наводишь — кот подпрыгивает выше обычного и мягко приземляется */
 .cat-strip img:hover { animation: hop .6s cubic-bezier(.34, 1.4, .64, 1) 1; }

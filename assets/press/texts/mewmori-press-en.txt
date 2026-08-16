@@ -39,7 +39,7 @@ Memory          4 GB RAM or more for conversations
 Memory in use   About 400 MB with the model loaded — preliminary measurement on a MacBook Pro M3 Max
 Privacy         Zero conversation telemetry: replies, screen contents and memories never leave the computer
 Account         None. No sign-up; a purchase lives in a licence key
-Price           The app is free. Only skins and accessories are paid, 99–599 ₽, one-time
+Price           The app is free. Only skins and accessories are paid, 99–1990 ₽ (60–1170 ⭐ in Telegram Stars), one-time
 Contents        14 cats, 22 wardrobe items, 5 things to do: hide-and-seek, chase, clicker, tic-tac-toe, a garden with expeditions
 Languages       Russian and English, following the system language
 Updates         Sparkle, in-app
