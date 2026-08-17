@@ -1,7 +1,7 @@
 // Метка канала из адреса страницы (`mewmori.com/?src=tg-prefire`) переезжает на
-// ссылки «Скачать». Без неё скачивание невозможно сосчитать по каналам: путь
-// «ролик → сайт → zip с GitHub» не открывает `mewmori://`, и приложение узнаёт
-// об источнике ровно ничего.
+// все внутренние страницы сайта и, в итоге, на ссылку «Скачать». Без неё путь
+// «ролик → главная → цены → zip с GitHub» теряет источник до того, как Worker
+// успевает его посчитать.
 //
 // Считает не этот файл, а редирект `/go` в воркере: блокировщик рекламы его не
 // вырежет, cookie он не ставит, и посетителя не запоминает — записываются
@@ -13,10 +13,19 @@
   var src = new URLSearchParams(window.location.search).get('src');
   if (!src || !/^[a-z][a-z0-9-]{0,31}$/.test(src)) return;
 
-  var links = document.querySelectorAll('a[href*="download.html"]');
+  var links = document.querySelectorAll('a[href]');
   for (var index = 0; index < links.length; index += 1) {
-    var url = new URL(links[index].getAttribute('href'), window.location.href);
+    var href = links[index].getAttribute('href');
+    // A fragment stays on this document. Adding a query string to it would turn
+    // an in-page navigation into a reload, so it deliberately keeps no rewrite.
+    if (!href || href.charAt(0) === '#') continue;
+
+    var url = new URL(href, window.location.href);
+    // Never decorate a checkout, a social link, mail, or any other external
+    // destination: `src` is only the site's own anonymous attribution tag.
+    if (url.origin !== window.location.origin) continue;
+
     url.searchParams.set('src', src);
-    links[index].setAttribute('href', url.pathname + url.search);
+    links[index].setAttribute('href', url.pathname + url.search + url.hash);
   }
 })();
